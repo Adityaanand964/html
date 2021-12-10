@@ -1,15 +1,50 @@
-*{
-    border: 1px solid black; 
+body {margin:0}
+.nav-wrapper{
+    background-color: #228651;
+    color: black;
+    padding: 2em;
+    box-shadow: 0 5px 8px rgba(0,0,0,.2);
+      }
+.nav-wrapper h3{
+    display: inline; 
+    padding: .5em 1.5em; 
+    text-align: center;
+    margin: auto;
+    border: 2px solid rgb(2, 83, 26);
+    
       
 }
-.nav-wrapper{
-    background-color: rgb(192, 250, 134);
-    color: black;
+.nav-wrapper a{
+    text-decoration: none;
+    padding: 0.5em 1.5em; 
+    margin-top: 1em;
+    margin-right: 0.5em;
+    border: 3px solid rgb(2, 83, 26); 
+  
+    }
+    
+.nav-wrapper a:hover{
+    background-color: rgb(1, 80, 5);
+    color: rgb(252, 246, 246);
 }
+.btn{
+    float: right;
+}
+.image{
+    margin-top: 1em;
+    text-align: center;
+}
+
 body{
     width: 100%;
     color:rgb(25, 138, 6) ;
+    
 }
 span > a{
     color: black;
 }
+.footer{
+    background-color: #228651;
+}
+
+ 
