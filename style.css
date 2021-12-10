@@ -1,0 +1,15 @@
+*{
+    border: 1px solid black; 
+      
+}
+.nav-wrapper{
+    background-color: rgb(192, 250, 134);
+    color: black;
+}
+body{
+    width: 100%;
+    color:rgb(25, 138, 6) ;
+}
+span > a{
+    color: black;
+}
