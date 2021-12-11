@@ -3,14 +3,13 @@
     margin: 0;
     padding: 0;
 }
-
-
-
 body {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color:rgb(25, 138, 6) ;
+    
 }
 .nav-wrapper{
     width: 100%;
@@ -28,48 +27,81 @@ body {
     padding: 0.5em; 
     text-align: center;
     margin: auto;
-    font-size: 1.4em;
-    
-    
-      
+    font-size: 1.6em;     
 }
 .logo{
     width: 30%;
-    padding-top: 1em;
+    padding-top: 0;
+    padding-left: 2em;
     font-weight: bold;
+    color: aliceblue;
+    align-items: center;
 }
 .btn{
     text-align: end;
     width: 70%;
     padding-top: 1em;
+    align-items: center;
 }
 .nav-wrapper a{
     text-decoration: none;
-    padding: 0.5em 1.5em; 
-    
-  
-    }
+    padding: 0.5em 1.5em;
+    color: aliceblue;
+    font-size: 1.2em;
+    font-weight: bolder;
+   }
     
 .nav-wrapper a:hover{
     background-color: rgb(1, 80, 5);
     color: rgb(252, 246, 246);
 }
-
-
 .image{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 1em;
     text-align: center;
+    padding: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
 }
-
-body{
-    width: 100%;
-    color:rgb(25, 138, 6) ;
+.image > div {
+   
+    width: 100%;    
+}
+.pic{
     
+    width: 100%;
+    object-fit: cover;    
 }
-span > a{
-    color: black;
+.product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: .5em;
+    text-align: center;
+    padding: 2em;
+    padding-top: 0.1em;
+
+}
+.product > div{
+    width: 25%;
+    padding: 0.1em;
+}
+.product-caption{
+    background-color: #228651;
+    color: aliceblue;
+}
+.pic-product{
+    
+    width: 100%;
+    object-fit: cover;    
+}
+.pic-product:hover {
+    opacity: 0.5;
 }
 .footer{
+    width: 100%;
     background-color: #228651;
 }
 
