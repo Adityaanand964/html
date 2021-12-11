@@ -163,4 +163,9 @@ input[type=text], select {
     text-align: center;
 
 }
+@media  screen and (max-width: 768px){
+    .product > div{
+        width: 50%;
+    }
+}
  
