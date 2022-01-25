@@ -1,86 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>Home Garden</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
-<body>
-    <span class="nav-wrapper">
-            <span class="logo"><img src="./Images/Logo.png" width="45px"><h3>Home Garden</h3></span>
-            <span class="btn">
-                <a href="#">Plants</a>
-                <a href="#">Seeds</a>
-                <a href="#">Fertilizers</a>
-                <a href="#">Instuments</a> 
-            </span>
-                           
-    </span>
-    <div class="image">
-        <div><img src="./Images/2.jpg" class="pic"></div>
-    </div>
-    <div class="product">
-        <div><a href="#"><figure class="product-caption"><img src="./Images/pot.jpg" class="pic-product"><figcaption>FLower Pot</figcaption></figure></a></div>
-        <div><a href="#"><figure class="product-caption"><img src="./Images/tool.jpg" class="pic-product"><figcaption>Tools</figcaption></figure></a></div>
-        <div><a href="#"><figure class="product-caption"><img src="./Images/fert.jpg" class="pic-product"><figcaption>Fertilizers</figcaption></figure></a></div>
-        <div><a href="#"><figure class="product-caption"><img src="./Images/plant.jpg" class="pic-product"><figcaption>Plants</figcaption></figure></a></div>
-    </div>
-    
-<div class="about">    
-    <h1>ABOUT US</h1>
-    <p>Home Garden is a one-stop online gardening store in India that caters to all your home gardening requirements. Whether you want to set up a vertical garden in the balcony of your house or a terrace garden on your house, you can get all the garden items online at our e-store.
-    </p>
-    <br>
-    <br>
-    <h3>WE PROVIDE</h3>
-    <br>
-    <ul>
-        <li>COMPOSTERS</li>
-        <li>Seeds</li>
-        <li>Plants</li>
-        <li>Pots</li>
-        <li>And Many More</li>
-    </ul>
-    <h3>GARDENING KITS</h3>
-    <br>
-    <P>If you want to have a vegetable patch in your garden, our gardening kit will be perfect for you. In a standard gardening kit, you will get grow pots, potting mix, seed packets and a detailed manual. So, even if you are a novice in gardening, you can easily set up the vegetable garden with our gardening kits.</P>
-    <br>
-    <h3>COMPOSTERS</h3>
-    <br>
-    <P>Composters are marvellous inventions that help you reduce the garbage at home and also give you rich liquid fertilizer. In our garden online shopping store, you will get TrustBin that is designed based on Japanese technology and helps you make compost at home using vegetable and kitchen wastes. With this composter, you can harvest liquid fertilizer every three days, and you will not have to spend any money on buying fertilizer for your garden.</P>
-</div><br><br>
-<div class="formm">
-    <h3> SIGN UP TO RECEIVE OUR NEWS LETTER:</h3>
-    <br>
-    <br>
-    <form>
-        <label>Name:</label>
-        <input type="text" name="Name:" placeholder="Your Name">
-        <br>
-        <label>Email:</label>
-        <input type="text" name="Email:" placeholder="abc@ymail.com">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- <h1>Hello, world!</h1> -->
+
+    <div class="container text-center" id="login">
+        <div class="card">
+            <form class="form-group form_data">
+        
+                <label for="uname"><b>Email</b></label>
+                <input type="email" placeholder="abc@ymail.com" name="email" required class="form-control">
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required class="form-control">
+                <button type="submit">Login</button>
+                            </form>
+            <a href="reg.html">Register</a>
+            <p style="color: red; text-align: center;" class="error"></p>
+        </div>
+       
     </div>
 
 
-<hr>
+<script>
+    $(document).ready(function(){
 
-
-
-<div class=footer>
-
-<div class="contact">
-    <h4>Contact US At:</h4>
-    <br>
-    <h5>Mob:8889992888</h5>
-    <h5>Email:homegarden@ymail.com</h5>
-</div>
-</div>
-    
+      function handleFormSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const formJSON = Object.fromEntries(data.entries());
   
-</body>
+    // console.log(formJSON)
+    $.ajax({
+          method: 'Post',
+          url: 'http://127.0.0.1:3000/users/login',
+          data: formJSON,
+          success: function(res){
+            // console.log(res)
+            $('.error').html(res.message)
+          }
+        })
+  }
+  const form = document.querySelector('.form_data');
+  form.addEventListener('submit', handleFormSubmit);
+     
+    });
+  </script>
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>
