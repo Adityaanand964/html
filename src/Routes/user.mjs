@@ -8,5 +8,9 @@ userRouter.post("/register",userControl.userdata);
 //     res.send("post done")
 // })
 
+userRouter.get('/register', (req,res)=>{
+    return res.render('register');
+})
+
 userRouter.post("/login",userControl.login)
 export default userRouter;

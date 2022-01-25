@@ -7,17 +7,23 @@ import * as db from "./db/db.js";
 import path from 'path';
 import fs from 'fs'
 const app = express();
+const __dirname=path.resolve()
 dotenv.config();
 const PORT=process.env.PORT;
 
+
+app.set('views',path.join(__dirname,'/src/views'))
+app.use(express.static('./src/views'));
+
+app.set('view engine','ejs');
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
-app.use("/users", userRouter)
+app.use("/user", userRouter)
 app.get('/', function (req, res) {
   // res.sendFile(fs.readFileSync('../views/index.html'))
-  res.send("Kaha aa gye aap!")
+  return res.render('index')
 })
 
 app.listen(PORT, ()=>{
