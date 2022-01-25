@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/server.js"
   },
-  "type": "module",
   "author": "Aditya",
   "license": "ISC",
   "dependencies": {

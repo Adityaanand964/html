@@ -1,5 +1,5 @@
-import express from "express"
-import * as userControl from "../Controllers/userController.mjs";
+const express= require('express');
+const userControl=require('../Controllers/userController.mjs')
 
 const userRouter = express.Router()
 

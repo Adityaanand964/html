@@ -1,11 +1,11 @@
-import express from "express"
-import * as dotenv from "dotenv"
-import userRouter from "./Routes/user.mjs";
-// import * as auth from "./auth/auth.mjs"
-import cors from "cors";
-import * as db from "./db/db.js";
-import path from 'path';
-import fs from 'fs'
+const express = require('express');
+const dotenv =require('dotenv');
+const userRouter= require('./Routes/user.mjs')
+const cors=require('cors');
+const db=require('./db/db')
+const path=require('path');
+const fs= require('fs');
+
 const app = express();
 dotenv.config();
 const PORT=process.env.PORT;
