@@ -21,6 +21,7 @@
     "fs": "^0.0.1-security",
     "html": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
+    "local-storage": "^2.0.0",
     "mongoose": "^6.1.7",
     "nodemon": "^2.0.15",
     "regex": "^0.1.1"

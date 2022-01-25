@@ -37,8 +37,9 @@ export const login= async(req, res)=>{
         let userList=await userModel.findOne({email: email});
 
         const pwd= await bcrypt.compare(password,userList.password);
-
+        // console.log(userList)
         if(pwd){
+            const token=jsonwebtoken.sign(userList.toJSON(),process.env.AUTH0_SECRET_KEY)
             // const authHeader= req.header("auth-header");
             // jsonwebtoken.verify(authHeader,process.env.AUTH0_SECRET_KEY,(err,token)=>{
             //     if(err)
@@ -49,7 +50,7 @@ export const login= async(req, res)=>{
             //     }
             // });
 
-            return successResponse({},"Successfully Logged In",res);
+            return successResponse(token,"Successfully Logged In",res);
         }
         else{
             const error=new Error("Invalid Password or email");
