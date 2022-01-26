@@ -44,21 +44,22 @@
 
             <form id="form" class="my-3">
                 <div class="form_one">
-                <input type="text" name="name" placeholder="Enter Your Name" class="form-control">
-                <input type="text" name="roll" placeholder="Enter Your Roll" class="form-control">
-                <input type="email" name="email" placeholder="Enter Your Email" class="form-control">
+                <input type="text" name="name" placeholder="Enter Your Name" class="form-control" required>
+                <input type="text" name="roll" placeholder="Enter Your Roll" class="form-control" required>
+                <input type="email" name="email" placeholder="Enter Your Email" class="form-control" required>
                 <div class="mt-2">
                     <label for="">Male</label>
                     <input type="radio" name="gender" id="gen" value="male">
                     <label for="">Female</label>
-                <input type="radio" name="gender" id="gen" value="female">
-                <input type="date" name="date">
+                <input type="radio" name="gender" id="gen" value="female" required>
+                <input type="date" name="date" required>
                 </div>
                 </div>
                 <button type="submit" id="btn">Add More</button>
             </form>
-            <button type="submit" id="btn">Submit</button>
+            <button type="submit" id="btn_save">Submit</button>
 
+            <p class="res" style="color: green;"></p>
 
         </div>
        
@@ -69,11 +70,6 @@
     $(document).ready(function(){
         $('#btn').on('click',(e)=>{
             e.preventDefault();
-
-
-
-
-
             $('.form_one').append('<input type="text" name="name" placeholder="Enter Your Name" class="form-control">',
                 '<input type="text" name="roll" placeholder="Enter Your Roll" class="form-control">',
                 '<input type="email" name="email" placeholder="Enter Your Email" class="form-control">',
@@ -84,6 +80,11 @@
                 '<input type="radio" name="gender" id="gen" value="female">',
                 '<input type="date" name="date" class="mx-1">',
                 '</div>');
+        })
+        $('#btn_save').on('click',(e)=>{
+          setTimeout(()=>{
+            $('.res').html("Uploaded Successfully");
+          },800)
         })
     });
   </script>
