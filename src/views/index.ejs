@@ -45,12 +45,13 @@
 
     $.ajax({
           method: 'Post',
-          url: 'http://127.0.0.1:3000/user/login',
+          url: 'https://garden-backend-aec.herokuapp.com/user/login',
           data: formJSON,
           success: function(res){
             // console.log(res)
             if(res.status==200)
             {
+              localStorage.setItem('token',res.data)
             $('.error').html(res.message);
             setTimeout(()=>{
                   window.location.href='/table'
